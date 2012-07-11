@@ -58,6 +58,8 @@ module TccIasp
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
-    config.i18n.default_locale = :sv
+    config.i18n.load_path += Dir[Rails.root.join('devise', 'locales', '*.{rb,yml}').to_s]
+    config.i18n.default_locale = :"pt-BR"
+    I18n.locale = :"pt-BR"
   end
 end
