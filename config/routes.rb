@@ -1,7 +1,15 @@
 TccIasp::Application.routes.draw do
 
   devise_for :users
-
+  
+  match 'produtos' => 'products#index'
+  
+  namespace :admin do
+    resources :products
+    #root :to => 'admin/welcome#index'
+    #devise_for :products
+  end
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
